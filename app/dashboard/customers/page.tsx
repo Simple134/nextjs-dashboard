@@ -1,9 +1,22 @@
-import { Metadata } from "next";
+'use server'
+import CustomersTable from "@/app/ui/customers/table"
+import { fetchCustomers } from "@/app/lib/data"
 
-export const metadata: Metadata = {
-    title: 'Customers',
-  };
+export default async function Customers({params} : {params: {id : string}}) {
+  const id = params.id;
 
-export default function Page() {
-    return <p>Customers Page</p>;
-}
+  const clientes = await fetchCustomers();
+
+  console.log(clientes);
+
+  return (
+    <main>
+      <div>
+        {/* Utilizar la lista de clientes (clientes) en vez de cliente */}
+        <CustomersTable customers={clientes} />
+      </div>
+    </main>
+  );
+};
+
+

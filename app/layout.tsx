@@ -1,6 +1,7 @@
 import '@/app/ui/global.css';
 import { inter } from './ui/font';
 import { Metadata } from 'next';
+import SideNav from './ui/dashboard/sidenav';
 
 export const metadata: Metadata = {
   title: {
