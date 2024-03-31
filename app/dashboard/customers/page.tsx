@@ -12,8 +12,9 @@ export default async function Customers({params} : {params: {id : string}}) {
   return (
     <main>
       <div>
+        <h1> Customers</h1>
         {/* Utilizar la lista de clientes (clientes) en vez de cliente */}
-        <CustomersTable customers={clientes} />
+        {/*<CustomersTable customers={clientes} />*/}
       </div>
     </main>
   );
